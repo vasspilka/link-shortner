@@ -39,7 +39,7 @@ class Home extends React.Component {
   }
 
   createShortUrl(event) {
-    this.setState({ error: null });
+    this.setState({ shortUrl: null, error: null });
 
     channel.push("create_slug", { url: this.state.urlInput });
 

@@ -14,9 +14,6 @@ defmodule ShortWeb.PageController do
         conn
         |> put_status(404)
         |> text("Error: Did not find url slug.")
-
-      _ ->
-        text(conn, "Error: Something unexpected happened.")
     end
   end
 end

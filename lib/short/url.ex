@@ -35,7 +35,7 @@ defmodule Short.Url do
   end
 
   @doc "Will create slug for new url and insert it into the database if it's valid."
-  @spec create(binary()) :: {:ok, t()} | {:error, Ecto.Changeset.t()}
+  @spec create(binary()) :: {:ok, t()} | {:error, Ecto.Changeset.t()} | {:error, term()}
   def create(url) do
     slug = create_slug(url)
 

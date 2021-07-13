@@ -17,3 +17,7 @@ server:
 # your test suite.
 run-test:
 	mix test
+
+run-lint:
+	mix credo
+	mix dialyzer
