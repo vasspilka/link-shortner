@@ -63,7 +63,7 @@ class Home extends React.Component {
               onChange={this.handleChange}
             />
             <button
-              className="px-8 rounded-r-lg bg-yellow-400  text-gray-800 font-bold p-2 uppercase border-yellow-500 border-t border-b border-r"
+              className="w-60 px-8 rounded-r-lg bg-yellow-400  text-gray-800 font-bold p-2 uppercase border-yellow-500 border-t border-b border-r"
               onClick={this.createShortUrl}
             >
               Get Short url.
