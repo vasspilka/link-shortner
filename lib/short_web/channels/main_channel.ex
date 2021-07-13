@@ -1,4 +1,7 @@
 defmodule ShortWeb.MainChannel do
+  @moduledoc """
+  Main channel for communicating with browser client.
+  """
   use Phoenix.Channel
 
   def join("main", _message, socket) do

@@ -24,7 +24,9 @@ class Home extends React.Component {
     this.createShortUrl = this.createShortUrl.bind(this);
 
     channel.on("send_url", (payload) => {
-      this.setState({ shortUrl: payload.slug });
+      let shortUrl = "http://" + window.location.host + "/" + payload.slug;
+
+      this.setState({ shortUrl: shortUrl });
     });
 
     channel.on("display_error", (payload) => {
