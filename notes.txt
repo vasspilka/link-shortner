@@ -1,0 +1,44 @@
+This is an assignment made for STORD the logistics services & software company.
+
+
+## Requirements
+
+There are a few things that are assumed to exist in your settup or are otherwise encouraged to have.
+
+* A postgresql service running in the background
+* asdf to install dependencies (optional)
+
+
+In case of a missing postgres installation one can be easily spawned through docker using the following command.
+
+```
+docker run -d \
+    --name postgres \
+    -p 5432:5432 \
+    -e POSTGRES_PASSWORD=postgres \
+    -e PGDATA=/var/lib/postgresql/data/pgdata \
+    postgres
+```
+
+Note that the postgres password is set to 'postgres', the app will try to connect to the user `postgres` with password `postgres`. This is hardcoded at the moment and can be changed in the elixir `dev.exs` config.
+
+For asdf there is a guide on their webpage. If you already have elixir and node installed in your system you can skip this part.
+
+Web tutorial: https://asdf-vm.com/#/core-manage-asdf
+
+
+## Settup
+To settup the application locally, the following commands should be run.
+
+> `make pre-setup` -> (Optional) Will install elixir, erlang and node through asdf
+
+> `make setup` -> Will setup the elixir application.
+
+> `make run-test` -> Will run tests
+
+> `make run-lint` -> Will lint for types and code quality as well as run the formatter
+
+> `make server` -> Will run the server, visit http://localhost:8080 to view it
+
+
+## Other notes and info

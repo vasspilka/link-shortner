@@ -4,6 +4,9 @@
 # compile code, build container images, initialize a database,
 # anything else that needs to happen before your server is started
 # for the first time
+pre-setup:
+	asdf install
+
 setup:
 	mix setup
 
@@ -19,5 +22,6 @@ run-test:
 	mix test
 
 run-lint:
+	mix format
 	mix credo
 	mix dialyzer
