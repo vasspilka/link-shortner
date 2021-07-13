@@ -1,4 +1,8 @@
 defmodule ShortWeb.Telemetry do
+  @moduledoc """
+  Phoenix generated telemetry metrics.
+  """
+
   use Supervisor
   import Telemetry.Metrics
 

@@ -1,4 +1,10 @@
 defmodule Short.Url do
+  @moduledoc """
+  Schema for our URL structure.
+
+  It is used to create URL slugs which can later be used to retrive
+  the url.
+  """
   use Ecto.Schema
 
   alias Short.Repo
@@ -63,7 +69,7 @@ defmodule Short.Url do
   end
 
   defp create_slug(url) do
-    :crypto.hash(:sha, url)
+    :crypto.hash(:md5, url)
     |> Base.encode16()
   end
 end
