@@ -2,7 +2,7 @@ defmodule ShortWeb.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  # channel "room:*", ShortWeb.RoomChannel
+  channel "main", ShortWeb.MainChannel
 
   # Socket params are passed from the client and can
   # be used to verify and authenticate a user. After

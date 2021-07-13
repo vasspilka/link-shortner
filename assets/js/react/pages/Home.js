@@ -1,13 +1,35 @@
 import React from "react";
 import ShortUrl from "../components/ShortUrl";
+import Error from "../components/Error";
+import socket from "../../socket";
+
+// Now that you are connected, you can join channels with a topic:
+let channel = socket.channel("main", {});
+
+channel
+  .join()
+  .receive("ok", (resp) => {
+    console.log("Joined successfully", resp);
+  })
+  .receive("error", (resp) => {
+    console.log("Unable to join", resp);
+  });
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { urlInput: "", shortUrl: null };
+    this.state = { urlInput: "", shortUrl: null, error: null };
 
     this.handleChange = this.handleChange.bind(this);
     this.createShortUrl = this.createShortUrl.bind(this);
+
+    channel.on("send_url", (payload) => {
+      this.setState({ shortUrl: payload.slug });
+    });
+
+    channel.on("display_error", (payload) => {
+      this.setState({ error: payload.error });
+    });
   }
 
   handleChange(event) {
@@ -15,7 +37,9 @@ class Home extends React.Component {
   }
 
   createShortUrl(event) {
-    this.setState({ shortUrl: this.state.urlInput});
+    this.setState({ error: null });
+
+    channel.push("create_slug", { url: this.state.urlInput });
 
     event.preventDefault();
   }
@@ -23,7 +47,7 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <h1 className="text-4xl text-center"> Wellcome to Short URL </h1>
+        {this.state.error && <Error error={this.state.error} />}
         <div>
           <form className="mt-20 m-4 flex">
             <input
