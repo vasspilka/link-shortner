@@ -10,6 +10,10 @@ defmodule Short.MixProject do
       compilers: [:phoenix] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
+      dialyzer: [
+        plt_add_apps: [:ex_unit, :mix],
+        plt_core_path: "_build/#{Mix.env()}"
+      ],
       deps: deps()
     ]
   end
