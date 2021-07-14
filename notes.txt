@@ -2,7 +2,6 @@ This is an assignment made for STORD the logistics services & software company.
 
 
 ## Requirements
-
 There are a few things that are assumed to exist in your settup or are otherwise encouraged to have.
 
 * A postgresql service running in the background
@@ -42,3 +41,9 @@ To settup the application locally, the following commands should be run.
 
 
 ## Other notes and info
+
+So the application meets the requirements overall, what could be included is end to end testing and tests regarding the frontend.
+
+Why I used a hash algorith for the short url (which ends up not being that short) is because I wanted a 1 to 1 connection between the urls and the slug, however changes could be made to support other types of slugs.
+
+Why I took the decision to use phoneix websockets for the url connection is because I wanted to refresh my memory on them and it felt like it could be a good fit for them here.

@@ -9,6 +9,7 @@ pre-setup:
 
 setup:
 	mix setup
+	npm install --prefix assets
 
 # `make server` will be used after `make setup` in order to start
 # an http server process that listens on any unreserved port
