@@ -1,10 +1,10 @@
 defmodule Short.Urls do
-  alias Short.Urls.Url
-
   @moduledoc """
   Context module for urls, this is the top level module used to interact
   with the Url shortening context.
   """
+
+  alias Short.Urls.Url
 
   @spec get_url(binary()) :: {:ok, Url.t()} | {:error, :not_found}
   defdelegate get_url(slug), to: Url, as: :get
