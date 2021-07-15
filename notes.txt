@@ -44,6 +44,8 @@ To settup the application locally, the following commands should be run.
 
 So the application meets the requirements overall, what could be included is end to end testing and tests regarding the frontend.
 
+The application is quite minimalistic, the requirements are simple and I did not want to overcomplicate them.
+
 Why I used a hash algorith for the short url (which ends up not being that short) is because I wanted a 1 to 1 connection between the urls and the slug, however changes could be made to support other types of slugs.
 
 Why I took the decision to use phoneix websockets for the url connection is because I wanted to refresh my memory on them and it felt like it could be a good fit for them here.
