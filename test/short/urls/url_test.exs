@@ -1,7 +1,7 @@
-defmodule Short.UrlTest do
+defmodule Short.Urls.UrlTest do
   use Short.DataCase
 
-  alias Short.Url
+  alias Short.Urls.Url
 
   describe "get/1" do
     test "returns error when slug does not exist" do

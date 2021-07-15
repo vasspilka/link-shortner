@@ -4,12 +4,14 @@ defmodule ShortWeb.MainChannel do
   """
   use Phoenix.Channel
 
+  alias Short.Urls
+
   def join("main", _message, socket) do
     {:ok, socket}
   end
 
   def handle_in("create_slug", %{"url" => url}, socket) do
-    case Short.Url.create(url) do
+    case Urls.create_url(url) do
       {:ok, %{slug: slug}} ->
         broadcast!(socket, "send_url", %{slug: slug})
 

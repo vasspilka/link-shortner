@@ -14,7 +14,7 @@ defmodule ShortWeb.PageControllerTest do
 
     test "Returns text error when slug does not exist.", %{conn: conn} do
       url = "https://www.example.com/some/path"
-      {:ok, %{slug: slug}} = Short.Url.create(url)
+      {:ok, %{slug: slug}} = Short.Urls.create_url(url)
 
       conn = get(conn, slug)
       assert redirected_to(conn, 302) == url

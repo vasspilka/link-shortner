@@ -1,4 +1,4 @@
-defmodule Short.Url do
+defmodule Short.Urls.Url do
   @moduledoc """
   Schema for our URL structure.
 
@@ -8,7 +8,7 @@ defmodule Short.Url do
   use Ecto.Schema
 
   alias Short.Repo
-  alias Short.Url
+  alias Short.Urls.Url
 
   import Ecto.Changeset
 

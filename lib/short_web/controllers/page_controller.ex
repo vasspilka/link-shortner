@@ -6,7 +6,7 @@ defmodule ShortWeb.PageController do
   end
 
   def do_redirect(conn, %{"slug" => slug}) do
-    case Short.Url.get(slug) do
+    case Short.Urls.get_url(slug) do
       {:ok, %{url: url}} ->
         redirect(conn, external: url)
 
